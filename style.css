@@ -1,0 +1,51 @@
+.site-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem; 
+    padding-bottom: 2.5rem ;
+}
+.site-name > a {
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    letter-spacing: 0.2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+.nav-list > li > a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.1rem;
+}
+
+/* background-color: #f7f7f7; very subtle grey */
+.container-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    height: 75vh;
+}
+h1 {
+    font-weight: 100;
+    font-size: xxx-large;
+    letter-spacing: 0.5rem;
+}
+
+.container-exp {
+    display: flex;
+}
