@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .site-name {
     display: flex;
     justify-content: center;
@@ -6,8 +11,6 @@
     padding-bottom: 2.5rem ;
 }
 .site-name > a {
-    text-decoration: none;
-    color: black;
     font-size: x-large;
     letter-spacing: 0.2rem;
 }
@@ -27,8 +30,6 @@ nav {
     padding-left: 0;
 }
 .nav-list > li > a {
-    text-decoration: none;
-    color: black;
     letter-spacing: 0.1rem;
 }
 .nav-list > li > a:hover {
@@ -68,7 +69,7 @@ h1 {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-.exp-content > .exp-header{
+.exp-content > .exp-header {
     width: 100%;
 }
 .exp-content > .exp-header > h2 {
@@ -91,5 +92,22 @@ h1 {
 .exp-content > .exp-points {
     padding-left: 0.5rem;
     letter-spacing: 0.05rem;
+}
+
+.container-works {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-item > .work-content > .work-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.work-item > .work-content > .work-link > a:hover {
+    text-decoration: underline;
 }
 
