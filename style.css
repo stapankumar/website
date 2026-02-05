@@ -24,11 +24,15 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    padding-left: 0;
 }
 .nav-list > li > a {
     text-decoration: none;
     color: black;
     letter-spacing: 0.1rem;
+}
+.nav-list > li > a:hover {
+    text-decoration: underline;
 }
 
 /* background-color: #f7f7f7; very subtle grey */
@@ -41,11 +45,51 @@ nav {
     height: 75vh;
 }
 h1 {
-    font-weight: 100;
+    font-weight: 300;
     font-size: xxx-large;
     letter-spacing: 0.5rem;
+}
+.container-hero > p {
+    letter-spacing: 0.05rem;
 }
 
 .container-exp {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5rem;
 }
+.exp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.exp-content > .exp-header{
+    width: 100%;
+}
+.exp-content > .exp-header > h2 {
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.exp-content > .exp-header > .organization {
+    opacity: 0.8;
+    letter-spacing: 0.05rem;
+    display: block;
+    padding-bottom: 0.2rem;
+}
+.exp-content > .exp-header > .time-line {
+    opacity: 0.6;
+    letter-spacing: 0.05rem;
+    display: block;
+}
+.exp-content > .exp-points {
+    padding-left: 0.5rem;
+    letter-spacing: 0.05rem;
+}
+
