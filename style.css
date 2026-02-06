@@ -2,6 +2,14 @@ a {
     text-decoration: none;
     color: black;
 }
+/* common container to center contents inside a container
+it needs to be added on tags which are currently styled 
+individually */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .site-name {
     display: flex;
@@ -59,7 +67,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:5rem;
+    padding: 5rem;
 }
 .exp-content {
     display: flex;
@@ -99,15 +107,50 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5rem;
 }
-
-.work-item > .work-content > .work-link {
+.container-works > .work-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.work-item > .work-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 70%;
+}
+.work-content > .work-title {
+    letter-spacing: 0.15rem;
+    font-weight: normal;
+}
+.work-content > .work-meta {
+    letter-spacing: 0.05rem;
+    opacity: 0.8;
+}
+.work-content > .work-desc {
+    letter-spacing: 0.05rem;
+    opacity: 0.6;
+    margin-top: 0.75rem;
+}
+.work-content > .work-points {
+    padding-left: 0.5rem;
+    letter-spacing: 0.05rem;
+}
+.work-content > .work-link {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
-.work-item > .work-content > .work-link > a:hover {
+.work-content > .work-link > a{
+    letter-spacing: 0.1rem;
+}
+.work-content > .work-link > a:hover {
     text-decoration: underline;
 }
+
 

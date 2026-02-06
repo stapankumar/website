@@ -56,14 +56,23 @@
     <section id="works">
         <div class="container-works">
             <div class="work-item">
-                <div class="work-image">
-
-                </div>
+                <!-- currently this work-content class is redundant unless we add non content elemnts like images or videos 
+                inside the owrk-item div -->
                 <div class="work-content">
                     <h3 class="work-title">IOT NOTIFICATION HANDLER</h3>
-                    <span class="work-meta"></span>
-                    <p class="work-desc"></p>
-                    <ul class="work-points"></ul>
+                    <span class="work-meta">
+                        Part of a smart village initiative under the VOICE program for indigenous digital communication technologies.
+                    </span>
+                    <p class="work-desc">
+                        A backend service built to ingest real IoT device data and compute KPIs
+                        for a smart village dashboard presented at a village technology consortium.
+                    </p>
+                    <ul class="work-points">
+                        <li><p>Worked with live field data where payloads were delayed, missing, or inconsistent.</p></li>
+                        <li><p>Reworked the service from a layer-based structure to a domain-oriented design to ship faster.</p></li>
+                        <li><p>Adjusted database schemas to efficiently compute time-based KPIs such as daily and hourly averages.</p></li>
+                        <li><p>Implemented fallback logic for missing sensor data to maintain reliable KPI outputs during demos.</p></li>
+                    </ul>
                     <div class="work-link">
                         <a href="https://github.com/stapankumar/receiver" target="_blank">GITHUB</a>
                         <a href="https://receiver-mwp4.onrender.com" target="_blank">LIVE</a>
