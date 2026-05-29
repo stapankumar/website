@@ -6,80 +6,92 @@
     <title>Tapan Sethi</title>
     <meta name="description" content="Website of Tapan Sethi, working as a Research Engineer at Centre for Development of Telematics
         in the filed of IoT and distributed systems">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <header id="header">
-        <div class="site-name container">
-            <a href="#header">TAPAN SETHI</a>
+        <div class="wrapper">
+            <div class="site-name">
+                <a href="#header">TAPAN SETHI</a>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#hero">HOME</a></li>
+                    <li><a href="#experience">EXPERIENCE</a></li>
+                    <li><a href="#works">WORK</a></li>
+                    <li><a href="#about">ABOUT ME</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section id="navbar">
-        <nav class="nav container">
-            <ul class="nav-list container">
-                <li><a href="#hero">HOME</a></li>
-                <li><a href="#experience">EXPERIENCE</a></li>
-                <li><a href="#works">WORK</a></li>
-                <li><a href="#about">ABOUT ME</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-        </nav>
-    </section>
-
     <section id="hero">
-        <div class="container-hero container">
-            <h1>SOFTWARE<br />ENGINEER.</h1>
-            <p class="hero-subtext">I design backend systems aligned with global IoT standards.</p>
-            <p class="hero-secondary">Built for real-world deployments and machine-to-machine communication.</p>
-            <span class="hero-meta">(2024 — Present)</span>
+        <div class="container-hero">
+            <div class="wrapper">
+                <div class="hero-left">
+                    <h1>SOFTWARE<br />ENGINEER.</h1>
+                    <p class="hero-subtext">I design backend systems aligned with global IoT standards.</p>
+                    <p class="hero-secondary">Built for real-world deployments and machine-to-machine communication.</p>
+                    <span class="hero-meta">(2024 — Present)</span>
+                </div>
+                <div class="hero-right">
+                    <span class="hero-bg-text">TS</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="experience">
-        <div class="container-exp container">
-            <div class="exp-content">
-                <div class="exp-header">
-                    <h2 class="role-title">RESEARCH ENGINEER</h2>  
-                    <hr />
-                    <span class="organization">Centre for Development of Telematics (C-DoT)</span>
-                    <span class="time-line">2024 — Present</span>
+        <div class="container-exp">
+            <div class="wrapper">
+                <p class="section-label">Experience</p>
+                <div class="exp-content">
+                    <div class="exp-header">
+                        <h2>RESEARCH ENGINEER</h2>
+                        <span class="organization">Centre for Development of Telematics (C-DoT)</span>
+                        <span class="time-line">2024 — Present</span>
+                    </div>
+                    <div class="exp-body">
+                        <ul class="exp-points">
+                            <li><p>Designed backend services aligned with oneM2M standards.</p></li>
+                            <li><p>Built service-layer APIs for real-time IoT devices.</p></li>
+                            <li><p>Delivered a feature that allows Indian Railways vendors to track wagon locations.</p></li>
+                            <li><p>Proposed change requests in global oneM2M working groups that were agreed into the specifications.</p></li>
+                        </ul>
+                        <a href="./assets/tapan_sde1_resume.pdf" class="resume-button" target="_blank">RESUME</a>
+                    </div>
                 </div>
-                <ul class="exp-points">
-                    <li><p>Designed backend services aligned with oneM2M standards.</p></li>
-                    <li><p>Built service-layer APIs for real-time IoT devices.</p></li>
-                    <li><p>Delivered a feature that allows Indian Railways vendors to track wagon locations.</p></li>
-                    <li><p>Proposed change requests in global oneM2M working groups that were agreed into the specifications.</p></li>
-                </ul>
-                <a href="./assets/tapan_sde1_resume.pdf" class="resume-button" target="_blank">RESUME</a>
             </div>
         </div>
     </section>
 
     <section id="works">
-        <div class="container-works container">
-            <div class="work-item container">
-                <!-- currently this work-content class is redundant unless we add non content elemnts like images or videos 
-                inside the owrk-item div -->
-                <div class="work-content">
-                    <h3 class="work-title">IOT NOTIFICATION HANDLER</h3>
-                    <span class="work-meta">
-                        Part of a smart village initiative under the VOICE program for indigenous digital communication technologies.
-                    </span>
-                    <p class="work-desc">
-                        A backend service built to ingest real IoT device data and compute KPIs
-                        for a smart village dashboard presented at a village technology consortium.
-                    </p>
-                    <ul class="work-points">
-                        <li><p>Worked with live field data where payloads were delayed, missing, or inconsistent.</p></li>
-                        <li><p>Reworked the service from a layer-based structure to a domain-oriented design to ship faster.</p></li>
-                        <li><p>Adjusted database schemas to efficiently compute time-based KPIs such as daily and hourly averages.</p></li>
-                        <li><p>Implemented fallback logic for missing sensor data to maintain reliable KPI outputs during demos.</p></li>
-                    </ul>
-                    <div class="work-link container">
-                        <a href="https://github.com/stapankumar/receiver" target="_blank">GITHUB</a>
-                        <a href="https://receiver-mwp4.onrender.com" target="_blank">LIVE</a>
+        <div class="container-works">
+            <div class="wrapper">
+                <p class="section-label">Work</p>
+                <div class="work-item">
+                    <div class="work-content">
+                        <h3 class="work-title">IOT NOTIFICATION HANDLER</h3>
+                        <span class="work-meta">
+                            Part of a smart village initiative under the VOICE program for indigenous digital communication technologies.
+                        </span>
+                        <p class="work-desc">
+                            A backend service built to ingest real IoT device data and compute KPIs
+                            for a smart village dashboard presented at a village technology consortium.
+                        </p>
+                        <ul class="work-points">
+                            <li><p>Worked with live field data where payloads were delayed, missing, or inconsistent.</p></li>
+                            <li><p>Reworked the service from a layer-based structure to a domain-oriented design to ship faster.</p></li>
+                            <li><p>Adjusted database schemas to efficiently compute time-based KPIs such as daily and hourly averages.</p></li>
+                            <li><p>Implemented fallback logic for missing sensor data to maintain reliable KPI outputs during demos.</p></li>
+                        </ul>
+                        <div class="work-link">
+                            <a href="https://github.com/stapankumar/receiver" target="_blank">GITHUB</a>
+                            <a href="https://receiver-mwp4.onrender.com" target="_blank">LIVE</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,35 +99,41 @@
     </section>
 
     <section id="about">
-        <div class="container-about container">
-            <div class="me">
-                <h3 class="about-heading">A LITTLE ABOUT ME</h3>
-                <p class="about-intro">I like working on things that take time to understand.
-                Problems where the first solution is rarely the correct one,
-                and clarity comes only after digging deeper.</p>
-                <p class="about-personal">Outside of work, I enjoy photography and visual storytelling, often drawn to imperfect but balanced compositions. 
-                I like observing things quietly — revisiting ideas, frames, or thoughts until they feel right. 
-                I also enjoy mathematics and explaining concepts to others, something I’ve often done at my university.</p>
+        <div class="container-about">
+            <div class="wrapper">
+                <p class="section-label">About</p>
+                <div class="me">
+                    <h3 class="about-heading">A LITTLE ABOUT ME</h3>
+                    <p class="about-intro">I like working on things that take time to understand.
+                    Problems where the first solution is rarely the correct one,
+                    and clarity comes only after digging deeper.</p>
+                    <p class="about-personal">Outside of work, I enjoy photography and visual storytelling, often drawn to imperfect but balanced compositions. 
+                    I like observing things quietly — revisiting ideas, frames, or thoughts until they feel right. 
+                    I also enjoy mathematics and explaining concepts to others, something I've often done at my university.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container-contact container">
-            <div class="contact-content">
-                <h3>LET'S STAY IN TOUCH</h3>
-                <span>I'd like to hear from you!</span>
-                <p>If you have a question, an idea, or just want to say hi, feel free to reach out.
-                I’m always curious about meaningful work and conversations. Let's connect!</p>
-                <a class="contact-button" href="mailto:tapan.sethi743@gmail.com">CONTACT ME</a>
+        <div class="container-contact">
+            <div class="wrapper">
+                <p class="section-label">Contact</p>
+                <div class="contact-content">
+                    <h3>LET'S STAY IN TOUCH</h3>
+                    <span>I'd like to hear from you!</span>
+                    <p>If you have a question, an idea, or just want to say hi, feel free to reach out.
+                    I'm always curious about meaningful work and conversations. Let's connect!</p>
+                    <a class="contact-button" href="mailto:stapankumar743@gmail.com">CONTACT ME</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer id="footer">
-        <div class="container-footer container">
-            <div class="footer-links container">
-                <a href="https://github.com/stapankumar" target="_blank">GIHUB</a>
+        <div class="wrapper">
+            <div class="footer-links">
+                <a href="https://github.com/stapankumar" target="_blank">GITHUB</a>
                 <a href="https://www.linkedin.com/in/tapan743" target="_blank">LINKEDIN</a>
             </div>
             <a href="#header" class="back-to-top">↑ Back to Top</a>
