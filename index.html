@@ -246,7 +246,7 @@
                         if (match) match.classList.add('nav-active');
                     }
                 });
-            }, { threshold: 0.4 }).observe(sec);
+            }, { threshold: 0, rootMargin: '-20% 0px -60% 0px' }).observe(sec);
         });
 
         /* ── COMMAND PALETTE ── */
