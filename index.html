@@ -1,23 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tapan Sethi</title>
-    <meta name="description" content="Website of Tapan Sethi, working as a Research Engineer at Centre for Development of Telematics
-        in the filed of IoT and distributed systems">
+    <meta name="description" content="Website of Tapan Sethi, working as a Research Engineer at Centre for Development of Telematics in the field of IoT and distributed systems">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
+
+    <!-- ── COMMAND PALETTE ── -->
+    <div class="pal-overlay" id="jsPal" role="dialog" aria-modal="true" aria-label="Navigation palette">
+        <div class="pal-box">
+            <div class="pal-search-row">
+                <i class="pal-search-icon" aria-hidden="true">⌕</i>
+                <input class="pal-input" id="jsPalInput" type="text" placeholder="Go to section or link…" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="pal-list" id="jsPalList"></div>
+            <div class="pal-footer-row">
+                <span class="pal-sc"><kbd>↑↓</kbd> navigate</span>
+                <span class="pal-sc"><kbd>↵</kbd> open</span>
+                <span class="pal-sc"><kbd>esc</kbd> close</span>
+            </div>
+        </div>
+    </div>
+
     <header id="header">
         <div class="wrapper">
             <div class="site-name">
                 <a href="#header">TAPAN SETHI</a>
             </div>
             <nav>
-                <ul class="nav-list">
+                <ul class="nav-list" id="jsNavList">
                     <li><a href="#hero">HOME</a></li>
                     <li><a href="#experience">EXPERIENCE</a></li>
                     <li><a href="#works">WORK</a></li>
@@ -25,6 +41,10 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
+            <div class="header-controls">
+                <button class="btn-cmd" id="jsCmdBtn" aria-label="Open command palette">⌘K</button>
+                <button class="btn-theme" id="jsThemeBtn" aria-label="Toggle dark mode">☀</button>
+            </div>
         </div>
     </header>
 
@@ -72,6 +92,7 @@
         <div class="container-works">
             <div class="wrapper">
                 <p class="section-label">Work</p>
+
                 <div class="work-item">
                     <div class="work-content">
                         <h3 class="work-title">IOT NOTIFICATION HANDLER</h3>
@@ -88,12 +109,65 @@
                             <li><p>Adjusted database schemas to efficiently compute time-based KPIs such as daily and hourly averages.</p></li>
                             <li><p>Implemented fallback logic for missing sensor data to maintain reliable KPI outputs during demos.</p></li>
                         </ul>
+                        <div class="work-tags">
+                            <span class="work-tag">Python</span>
+                            <span class="work-tag">PostgreSQL</span>
+                            <span class="work-tag">Docker</span>
+                            <span class="work-tag">oneM2M</span>
+                            <span class="work-tag">IoT</span>
+                        </div>
                         <div class="work-link">
                             <a href="https://github.com/stapankumar/receiver" target="_blank">GITHUB</a>
                             <a href="https://receiver-mwp4.onrender.com" target="_blank">LIVE</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="work-item">
+                    <div class="work-content">
+                        <h3 class="work-title">IICPC DISTRIBUTED BENCHMARKING AND HOSTING PLATFORM</h3>
+                        <span class="work-meta">
+                            IICPC Summer Hackathon 2026 — participation.
+                        </span>
+                        <p class="work-desc">
+                            A production-grade platform for evaluating contestant-submitted orderbook implementations
+                            under simulated peak market conditions. Think Codeforces — but for quantitative trading infrastructure.
+                        </p>
+                        <ul class="work-points">
+                            <li><p>Containerises and deploys contestant code in isolated K8s sandboxes via Kaniko Jobs with per-submission resource quotas and network isolation.</p></li>
+                            <li><p>Spawns a fleet of 500+ concurrent trading bots that benchmark p50/p90/p99 latency and fill correctness in real time via Redis Streams.</p></li>
+                            <li><p>Scores and ranks contestants live on a streaming leaderboard via Server-Sent Events using a composite formula weighting TPS, latency, and correctness.</p></li>
+                            <li><p>Fully automated Helm deployment: detects system resources, allocates 60% to minikube, configures hosts, and brings up all services with zero manual steps.</p></li>
+                        </ul>
+                        <div class="work-stats">
+                            <div class="work-stat">
+                                <span class="work-stat-val">12,158</span>
+                                <span class="work-stat-lbl">orders / sec</span>
+                            </div>
+                            <div class="work-stat">
+                                <span class="work-stat-val">27ms</span>
+                                <span class="work-stat-lbl">p99 latency</span>
+                            </div>
+                            <div class="work-stat">
+                                <span class="work-stat-val">500+</span>
+                                <span class="work-stat-lbl">concurrent bots</span>
+                            </div>
+                        </div>
+                        <div class="work-tags">
+                            <span class="work-tag">Go</span>
+                            <span class="work-tag">Kubernetes</span>
+                            <span class="work-tag">Helm</span>
+                            <span class="work-tag">Redis Streams</span>
+                            <span class="work-tag">React</span>
+                            <span class="work-tag">Kaniko</span>
+                        </div>
+                        <div class="work-link">
+                            <a href="https://github.com/stapankumar/iicpc-hackathon-platform" target="_blank">GITHUB</a>
+                            <a href="https://github.com/stapankumar/iicpc-hackathon-platform/blob/main/IICPC%20Summer%20Hackathon%202026.pdf" target="_blank" class="cert-link">CERTIFICATE</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -107,8 +181,8 @@
                     <p class="about-intro">I like working on things that take time to understand.
                     Problems where the first solution is rarely the correct one,
                     and clarity comes only after digging deeper.</p>
-                    <p class="about-personal">Outside of work, I enjoy photography and visual storytelling, often drawn to imperfect but balanced compositions. 
-                    I like observing things quietly — revisiting ideas, frames, or thoughts until they feel right. 
+                    <p class="about-personal">Outside of work, I enjoy photography and visual storytelling, often drawn to imperfect but balanced compositions.
+                    I like observing things quietly — revisiting ideas, frames, or thoughts until they feel right.
                     I also enjoy mathematics and explaining concepts to others, something I've often done at my university.</p>
                 </div>
             </div>
@@ -140,5 +214,152 @@
             <p class="footer-text">© 2026 Tapan Sethi. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        /* ── THEME ── */
+        const html    = document.documentElement;
+        const themeBtn = document.getElementById('jsThemeBtn');
+
+        function applyTheme(t) {
+            html.dataset.theme = t;
+            themeBtn.textContent = t === 'dark' ? '☾' : '☀';
+            localStorage.setItem('ts-theme', t);
+        }
+
+        // Respect saved preference; default to light
+        applyTheme(localStorage.getItem('ts-theme') || 'light');
+
+        themeBtn.addEventListener('click', () => {
+            applyTheme(html.dataset.theme === 'dark' ? 'light' : 'dark');
+        });
+
+        /* ── SCROLL SPY ── */
+        const sections = [...document.querySelectorAll('section[id]')];
+        const navLinks = [...document.querySelectorAll('#jsNavList a')];
+
+        sections.forEach(sec => {
+            new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        navLinks.forEach(a => a.classList.remove('nav-active'));
+                        const match = document.querySelector(`#jsNavList a[href="#${sec.id}"]`);
+                        if (match) match.classList.add('nav-active');
+                    }
+                });
+            }, { threshold: 0.4 }).observe(sec);
+        });
+
+        /* ── COMMAND PALETTE ── */
+        const ITEMS = [
+            { group: 'Navigate', type: 'scroll', anchor: '#hero',       name: 'Home',        hint: ''          },
+            { group: 'Navigate', type: 'scroll', anchor: '#experience', name: 'Experience',  hint: 'C-DoT'     },
+            { group: 'Navigate', type: 'scroll', anchor: '#works',      name: 'Work',        hint: 'Projects'  },
+            { group: 'Navigate', type: 'scroll', anchor: '#about',      name: 'About me',    hint: ''          },
+            { group: 'Navigate', type: 'scroll', anchor: '#contact',    name: 'Contact',     hint: ''          },
+            { group: 'Links',    type: 'link',   href: './assets/tapan_sde1_resume.pdf',                                                                               name: 'Resume',      hint: 'PDF'       },
+            { group: 'Links',    type: 'link',   href: 'https://github.com/stapankumar',                                                                               name: 'GitHub',      hint: ''          },
+            { group: 'Links',    type: 'link',   href: 'https://www.linkedin.com/in/tapan743',                                                                         name: 'LinkedIn',    hint: ''          },
+            { group: 'Links',    type: 'link',   href: 'https://github.com/stapankumar/iicpc-hackathon-platform/blob/main/IICPC%20Summer%20Hackathon%202026.pdf',     name: 'Certificate', hint: 'IICPC'     },
+        ];
+
+        const palOverlay = document.getElementById('jsPal');
+        const palList    = document.getElementById('jsPalList');
+        const palInput   = document.getElementById('jsPalInput');
+        const cmdBtn     = document.getElementById('jsCmdBtn');
+
+        let idx      = 0;
+        let rendered = [];
+
+        function palOpen() {
+            palInput.value = '';
+            idx = 0;
+            rendered = [...ITEMS];
+            buildList();
+            palOverlay.classList.add('pal-open');
+            requestAnimationFrame(() => palInput.focus());
+        }
+
+        function palClose() {
+            palOverlay.classList.remove('pal-open');
+        }
+
+        function palRun(item) {
+            palClose();
+            if (item.type === 'scroll') {
+                const el = document.querySelector(item.anchor);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.open(item.href, '_blank', 'noopener,noreferrer');
+            }
+        }
+
+        function buildList() {
+            const q = palInput.value.toLowerCase().trim();
+            rendered = q
+                ? ITEMS.filter(i => i.name.toLowerCase().includes(q) || i.hint.toLowerCase().includes(q))
+                : [...ITEMS];
+
+            palList.innerHTML = '';
+
+            if (!rendered.length) {
+                palList.innerHTML = '<p style="padding:1rem 1.2rem;font-size:0.82rem;color:var(--color-muted);">No results</p>';
+                return;
+            }
+
+            const groups = Object.create(null);
+            rendered.forEach(item => {
+                if (!groups[item.group]) groups[item.group] = [];
+                groups[item.group].push(item);
+            });
+
+            Object.entries(groups).forEach(([g, items]) => {
+                const lbl = document.createElement('div');
+                lbl.className = 'pal-group-label';
+                lbl.textContent = g;
+                palList.appendChild(lbl);
+                items.forEach(item => {
+                    const el = document.createElement('div');
+                    el.className = 'pal-item';
+                    el.innerHTML =
+                        `<span class="pal-item-name">${item.name}</span>` +
+                        (item.hint ? `<span class="pal-item-hint">${item.hint}</span>` : '');
+                    el.addEventListener('click', () => palRun(item));
+                    palList.appendChild(el);
+                });
+            });
+
+            highlight();
+        }
+
+        function highlight() {
+            const els = [...palList.querySelectorAll('.pal-item')];
+            if (idx >= els.length) idx = Math.max(0, els.length - 1);
+            els.forEach((el, i) => {
+                el.classList.toggle('pal-on', i === idx);
+                if (i === idx) el.scrollIntoView({ block: 'nearest' });
+            });
+        }
+
+        palInput.addEventListener('input', () => { idx = 0; buildList(); });
+
+        palInput.addEventListener('keydown', e => {
+            const els = [...palList.querySelectorAll('.pal-item')];
+            if (e.key === 'ArrowDown')  { e.preventDefault(); idx = Math.min(idx + 1, els.length - 1); highlight(); }
+            else if (e.key === 'ArrowUp')   { e.preventDefault(); idx = Math.max(idx - 1, 0); highlight(); }
+            else if (e.key === 'Enter')     { if (rendered[idx]) palRun(rendered[idx]); }
+            else if (e.key === 'Escape')    { palClose(); }
+        });
+
+        palOverlay.addEventListener('click', e => { if (e.target === palOverlay) palClose(); });
+        cmdBtn.addEventListener('click', palOpen);
+
+        document.addEventListener('keydown', e => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+                e.preventDefault();
+                palOverlay.classList.contains('pal-open') ? palClose() : palOpen();
+            }
+            if (e.key === 'Escape' && palOverlay.classList.contains('pal-open')) palClose();
+        });
+    </script>
 </body>
 </html>

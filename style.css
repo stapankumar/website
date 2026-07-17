@@ -25,6 +25,18 @@
 }
 
 /* ============================================
+   DARK THEME TOKENS
+   ============================================ */
+[data-theme="dark"] {
+    --color-bg: #0f0f0e;
+    --color-text: #e8e8e4;
+    --color-muted: rgba(232, 232, 228, 0.4);
+    --color-subtle: rgba(232, 232, 228, 0.62);
+    --color-surface: #181817;
+    --color-border: rgba(232, 232, 228, 0.12);
+}
+
+/* ============================================
    RESET & BASE
    ============================================ */
 *, *::before, *::after {
@@ -45,7 +57,8 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    padding-top: 73px;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -67,8 +80,15 @@ a {
    HEADER & NAV
    ============================================ */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     padding-block: var(--space-md);
     border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    transition: border-color 0.25s ease, background-color 0.25s ease;
 }
 
 header .wrapper {
@@ -102,6 +122,57 @@ nav ul li a:hover {
     color: var(--color-text);
 }
 
+/* active nav link (scroll spy) */
+nav ul li a.nav-active {
+    color: var(--color-text);
+}
+
+/* ── HEADER CONTROLS (theme + command palette) ── */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: var(--space-md);
+}
+
+.btn-theme {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+    line-height: 1;
+}
+
+.btn-theme:hover {
+    border-color: var(--color-subtle);
+    color: var(--color-text);
+}
+
+.btn-cmd {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.06rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition);
+    white-space: nowrap;
+}
+
+.btn-cmd:hover {
+    border-color: var(--color-subtle);
+    color: var(--color-text);
+}
+
 /* ============================================
    HERO
    ============================================ */
@@ -110,6 +181,7 @@ nav ul li a:hover {
     min-height: 75vh;
     display: flex;
     align-items: center;
+    transition: background-color 0.25s ease;
 }
 
 .container-hero .wrapper {
@@ -146,6 +218,7 @@ nav ul li a:hover {
     letter-spacing: -0.02em;
     white-space: nowrap;
     position: absolute;
+    transition: color 0.25s ease;
 }
 
 h1 {
@@ -175,6 +248,7 @@ h1 {
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-sm);
     border-bottom: 1px solid var(--color-border);
+    transition: color 0.25s ease, border-color 0.25s ease;
 }
 
 /* ============================================
@@ -191,6 +265,7 @@ h1 {
     grid-template-columns: 1fr 2fr;
     gap: var(--space-lg);
     align-items: start;
+    transition: border-color 0.25s ease;
 }
 
 .exp-content:last-of-type {
@@ -253,11 +328,13 @@ h1 {
 .container-works {
     padding-block: var(--space-xl);
     background-color: var(--color-surface);
+    transition: background-color 0.25s ease;
 }
 
 .work-item {
     padding-block: var(--space-md);
     border-bottom: 1px solid var(--color-border);
+    transition: border-color 0.25s ease;
 }
 
 .work-item:last-of-type {
@@ -301,6 +378,8 @@ h1 {
     display: flex;
     gap: var(--space-md);
     margin-top: var(--space-sm);
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .work-link a {
@@ -315,6 +394,68 @@ h1 {
     color: var(--color-text);
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+/* tech tags — understated, matching editorial tone */
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: var(--space-sm);
+}
+
+.work-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.2rem 0.5rem;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+/* certificate link — slightly distinguished */
+.work-link a.cert-link {
+    opacity: 0.9;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1px;
+}
+
+.work-link a.cert-link:hover {
+    border-bottom-color: var(--color-text);
+    text-decoration: none;
+}
+
+/* project stats row */
+.work-stats {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.work-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.work-stat-val {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    line-height: 1;
+    transition: color 0.25s ease;
+}
+
+.work-stat-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    transition: color 0.25s ease;
 }
 
 /* ============================================
@@ -349,6 +490,7 @@ h1 {
 .container-contact {
     padding-block: var(--space-xl);
     background-color: var(--color-surface);
+    transition: background-color 0.25s ease;
 }
 
 .contact-content {
@@ -404,6 +546,7 @@ footer {
     background-color: var(--color-surface);
     border-top: 1px solid var(--color-border);
     padding-block: var(--space-lg);
+    transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 footer .wrapper {
@@ -445,14 +588,157 @@ footer .wrapper {
 }
 
 /* ============================================
-   FONT IMPORTS — add to <head> instead ideally
-   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=DM+Sans:wght@300;400&display=swap');
+   COMMAND PALETTE
    ============================================ */
+.pal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 14vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+[data-theme="dark"] .pal-overlay {
+    background: rgba(0, 0, 0, 0.62);
+}
+
+.pal-overlay.pal-open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.pal-box {
+    width: 100%;
+    max-width: 520px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14), 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px);
+    transition: transform 0.15s ease;
+}
+
+[data-theme="dark"] .pal-box {
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pal-overlay.pal-open .pal-box {
+    transform: translateY(0);
+}
+
+.pal-search-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pal-search-icon {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    font-style: normal;
+}
+
+.pal-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+}
+
+.pal-input::placeholder {
+    color: var(--color-muted);
+}
+
+.pal-list {
+    padding: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.pal-group-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18rem;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    padding: 0.6rem 0.75rem 0.3rem;
+}
+
+.pal-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    cursor: pointer;
+    transition: background var(--transition);
+    font-size: 0.85rem;
+    color: var(--color-subtle);
+}
+
+.pal-item:hover,
+.pal-item.pal-on {
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.pal-item-name {
+    flex: 1;
+    letter-spacing: 0.02em;
+}
+
+.pal-item-hint {
+    font-size: 0.7rem;
+    letter-spacing: 0.06rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+}
+
+.pal-footer-row {
+    display: flex;
+    gap: 1rem;
+    padding: 0.55rem 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.pal-sc {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.06rem;
+    color: var(--color-muted);
+    text-transform: uppercase;
+}
+
+.pal-sc kbd {
+    font-family: var(--font-body);
+    font-size: 0.62rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 0.1rem 0.35rem;
+}
 
 /* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 768px) {
+    body {
+        padding-top: 120px;
+    }
+
     .wrapper {
         padding-inline: var(--space-sm);
     }
@@ -496,15 +782,34 @@ footer .wrapper {
     .container-contact {
         padding-block: var(--space-lg);
     }
+
+    .work-stats {
+        gap: var(--space-md);
+    }
+
+    .header-controls {
+        margin-left: 0;
+    }
+
+    .pal-box {
+        max-width: calc(100vw - 2rem);
+    }
 }
 
-/* ============================================
-   RESPONSIVE — narrow phones (≤400px)
-   e.g. Samsung Galaxy S8+, Galaxy Z Fold 5
-   ============================================ */
 @media (max-width: 400px) {
+    body {
+        padding-top: 140px;
+    }
+
     nav ul li a {
         font-size: 0.62rem;
         letter-spacing: 0.04rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
